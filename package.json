@@ -3,9 +3,13 @@
   "name": "capsulebasic",
   "displayName": "CapsuleBasic Syntax Highlighting",
   "description": "Syntax highlighting for CapsuleBasic, a language that uses <| and |> delimiters",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.50.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EFTEC/capsulebasic"
   },
   "categories": ["Programming Languages"],
   "contributes": {

@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(vsce package:*)",
-      "Bash(code --install-extension cbasic-0.0.2.vsix)"
+      "Bash(code --install-extension cbasic-0.0.2.vsix)",
+      "Bash(code --install-extension capsulebasic-0.0.3.vsix)"
     ]
   }
 }
