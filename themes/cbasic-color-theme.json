@@ -1,0 +1,78 @@
+{
+  "name": "CBasic Dark",
+  "type": "dark",
+  "colors": {},
+  "tokenColors": [
+    {
+      "scope": "punctuation.definition.block.begin.cbasic, punctuation.definition.block.end.cbasic",
+      "settings": {
+        "foreground": "#ff6ec7",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "meta.block.cbasic",
+      "settings": {
+        "foreground": "#e0e0e0",
+        "background": "#1e1e3e"
+      }
+    },
+    {
+      "scope": "meta.block.cbasic keyword.control",
+      "settings": {
+        "foreground": "#ff79c6",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "meta.block.cbasic support.function",
+      "settings": {
+        "foreground": "#8be9fd"
+      }
+    },
+    {
+      "scope": "meta.block.cbasic constant.language",
+      "settings": {
+        "foreground": "#bd93f9"
+      }
+    },
+    {
+      "scope": "meta.block.cbasic string",
+      "settings": {
+        "foreground": "#f1fa8c"
+      }
+    },
+    {
+      "scope": "meta.block.cbasic constant.numeric",
+      "settings": {
+        "foreground": "#bd93f9"
+      }
+    },
+    {
+      "scope": "meta.block.cbasic keyword.operator",
+      "settings": {
+        "foreground": "#ff79c6"
+      }
+    },
+    {
+      "scope": "meta.block.cbasic variable.other.readwrite",
+      "settings": {
+        "foreground": "#f8f8f2"
+      }
+    },
+    {
+      "scope": "punctuation.definition.pipe.begin.cbasic, punctuation.definition.pipe.end.cbasic",
+      "settings": {
+        "foreground": "#50fa7b",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "markup.other.pipe.content.cbasic",
+      "settings": {
+        "foreground": "#50fa7b",
+        "fontStyle": "italic underline"
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "publisher": "jorge-castro-c",
+  "name": "capsulebasic",
+  "displayName": "CapsuleBasic Syntax Highlighting",
+  "description": "Syntax highlighting for CapsuleBasic, a language that uses <| and |> delimiters",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "cbasic",
+        "aliases": ["CapsuleBasic", "capsulebasic"],
+        "extensions": [".cbasic"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "cbasic",
+        "scopeName": "source.cbasic",
+        "path": "./syntaxes/cbasic.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "CapsuleBasic Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/cbasic-color-theme.json"
+      }
+    ]
+  }
+}

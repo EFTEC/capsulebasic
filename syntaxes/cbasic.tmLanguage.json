@@ -1,0 +1,161 @@
+{
+  "scopeName": "source.cbasic",
+  "name": "CBasic",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#cbasic-block" },
+    { "include": "#keywords" },
+    { "include": "#strings" },
+    { "include": "#numbers" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.cbasic",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.cbasic",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "cbasic-block": {
+      "patterns": [
+        {
+          "name": "meta.block.cbasic",
+          "begin": "(<\\|)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.block.begin.cbasic"
+            }
+          },
+          "end": "(\\|>)",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.block.end.cbasic"
+            }
+          },
+          "patterns": [
+            { "include": "#cbasic-block-inner" }
+          ]
+        }
+      ]
+    },
+    "cbasic-block-inner": {
+      "patterns": [
+        {
+          "name": "keyword.control.cbasic",
+          "match": "\\b(setfn|createstack|print|printt|lower|upper|idash|nidash|pdash|first|quit|trim|addindent|indent|endindent|firstitem|pos|replace|len|mod|set|return|rem|explode|implode|setarr|pusharr|def|list|listcase|listswitch|filter|concat|in|notin|inkey|notinkey|add|increase|minus|array|arraykey|include|if|lookup|switch|case|casearr|endcase|block|endblock|content|structure|struct|endcontent|clearcontent|region|endregion|deletecontent|savecontent|foldercontent|template|notemplate|contentvar|timestamp|deco|tri|eq|ne|eqchange|nechange|size|tostring|toarray|null|req|between|norepeat|ping|eventtemplate|error|iserror|isnoterror)\\b"
+        },
+        {
+          "name": "support.function.cbasic",
+          "match": "\\b(print|println|input|len|range|type|string|int|float|bool|array|map|push|pop|sort|filter|map|reduce|keys|values|toString|parseInt|parseFloat)\\b"
+        },
+        {
+          "name": "constant.language.cbasic",
+          "match": "\\b(@objid|@objtable|@objdescription|@objparent|@objchildren|@objnamespace|@objcolid|@objcolname|@objcolenable|@objclass|@objmethod|@objmap|@objactionmap)\\b"
+        },
+        {
+          "name": "variable.other.readwrite.cbasic",
+          "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b"
+        },
+        {
+          "name": "keyword.operator.cbasic",
+          "match": "(==|!=|<=|>=|<|>|\\+|\\-|\\*|\\/|%|=|\\+\\+|\\-\\-|\\+=|\\-=|\\*=|\\/=|&&|\\|\\||!|&|\\||\\^|~|<<|>>)"
+        },
+        {
+          "name": "string.quoted.double.cbasic",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.cbasic",
+              "match": "\\\\."
+            },
+            { "include": "#pipe-in-string" }
+          ]
+        },
+        {
+          "name": "string.quoted.single.cbasic",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.cbasic",
+              "match": "\\\\."
+            },
+            { "include": "#pipe-in-string" }
+          ]
+        },
+        {
+          "name": "constant.numeric.cbasic",
+          "match": "\\b\\d+(\\.\\d+)?\\b"
+        }
+      ]
+    },
+    "pipe-in-string": {
+      "patterns": [
+        {
+          "name": "markup.other.pipe.cbasic",
+          "match": "(\\|)((?:[^|'\"\\n\\\\]|\\\\.)*)(\\|)",
+          "captures": {
+            "1": { "name": "punctuation.definition.pipe.begin.cbasic" },
+            "2": { "name": "markup.other.pipe.content.cbasic" },
+            "3": { "name": "punctuation.definition.pipe.end.cbasic" }
+          }
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.cbasic",
+          "match": "\\b(if|else|for|while|do|switch|case|break|continue|return|function|var|let|const|class|new|try|catch|finally|throw|import|export|from|default|typeof|instanceof|in|of|async|await|yield)\\b"
+        },
+        {
+          "name": "constant.language.cbasic",
+          "match": "\\b(true|false|null|undefined|none|nil)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.cbasic",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.cbasic",
+              "match": "\\\\."
+            },
+            { "include": "#pipe-in-string" }
+          ]
+        },
+        {
+          "name": "string.quoted.single.cbasic",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.cbasic",
+              "match": "\\\\."
+            },
+            { "include": "#pipe-in-string" }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.cbasic",
+          "match": "\\b\\d+(\\.\\d+)?\\b"
+        }
+      ]
+    }
+  }
+}
